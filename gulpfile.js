@@ -1,6 +1,5 @@
-
-let project_folder = require("path").basename(__dirname); //Папка готового проекта
-let source_folder = "#src";                              //Папка исходников
+let project_folder = "dist"; //Папка готового проекта   // require("path").basename(__dirname)
+let source_folder = "#src";        //Папка исходников
 
 let fs = require('fs');
 
@@ -16,14 +15,14 @@ let path = {
       html: [source_folder + "/*.html", "!" + source_folder + "/_*.html"],
       css: source_folder + "/scss/style.scss",
       js: source_folder + "/js/script.js",
-      img: source_folder + "/img/**/*.{jpg, png, svg, gif, ico, webp}",
+      img: source_folder + "/img/**/*.+(png|jpg|gif|ico|svg|webp)",
       fonts: source_folder + "/fonts/*.ttf",
    },
    watch: {
       html: source_folder + "/**/*.html",
       css: source_folder + "/scss/**/*.scss",
       js: source_folder + "/js/**/*.js",
-      img: source_folder + "/img/**/*.{jpg, png, svg, gif, ico, webp}",
+      img: source_folder + "/img/**/*.+(png|jpg|gif|ico|svg|webp)",
    },
    clean: "./" + project_folder + "/"
 }
@@ -51,7 +50,8 @@ let { src, dest } = require('gulp'),
 function browserSync(params) {
    browsersync.init({
       server: {
-         baseDir: "./" + project_folder + "/"
+         baseDir: "./" + project_folder + "/",
+         index: "index.html"
       },
       port: 3000,
       notify: false
@@ -117,7 +117,7 @@ function images() {
             progressive: true,
             svgoPlugins: [{ removeViewBox: false }],
             interlaced: true,
-            optimizationLevel: 3 // 0 to 7
+            optimizationLevel: 0 // 0 to 7
          })
       )
       .pipe(dest(path.build.img))

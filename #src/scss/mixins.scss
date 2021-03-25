@@ -1,20 +1,4 @@
 //* Миксины
-// TODO: это нужно с опытом подкидать, пока пусть тут будет
-// @mixin btn ($pw) {
-//    display: inline-block;
-//    padding: 15px $pw;
-
-//    border-radius: 3px;
-//    background-color: $btn-color;
-
-//    transition: background-color .2s linear;
-   
-//    &:hover {
-//       background-color: #b33d3d;
-//    }
-// }
-
-
 @mixin flexing ($jc: center) {
    display: flex;
    align-items: center;
@@ -35,9 +19,3 @@
    display: $display;
    position: $pos;
  }
-
-@mixin avatar($wh, $mr) {
-   width: $wh;
-   height: $wh;
-   margin-right: $mr;
-}
