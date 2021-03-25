@@ -17,6 +17,8 @@
 
 // Переменные ===================================
 $main-p: 24px;
+// 950 px
+// 750 px
 
 $main-bg: #262626;
 $content-bg: #6D55BD;
@@ -41,6 +43,7 @@ body {
 }
 
 .nav {
+   z-index: 100;
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -48,7 +51,6 @@ body {
    top: 0;
    right: 30px;
    bottom: 0;
-   z-index: 100;
 
    &__link {
       width: 25px; height: 25px;
@@ -72,6 +74,7 @@ body {
    &--tools {
       width: 125px; height: 125px;
       margin-right: 45px;
+      
       filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
       
       @media (max-height: 950px) {
@@ -88,7 +91,7 @@ body {
       }
 
       &:hover {
-         animation: jello-vertical 0.9s both;
+         cursor: pointer;
       }
    }
 
@@ -103,17 +106,6 @@ body {
       color: $content-bg;
       position: relative;
    }
-
-   &-line {
-      &::before {
-         @include pseudo;
-         top: 23px;
-         left: 9px;
-         width: 39px;
-         height: 5px;
-         background: $text-color;
-      }
-   }
 }
 
 .marquee {
@@ -124,10 +116,24 @@ body {
    transform: rotate(-90deg);
 
    font-size: 76px;
+
+   @media (max-height: 650px) {
+      left: -44%;
+      font-size: 60px;
+   }
 }
 
 .radial {
    background: radial-gradient(42.81% 42.81% at 50% 55.87%, #FFFFFF 0%, #312B45 0.01%, #262626 100%);
+}
+
+.gmail-link {
+   z-index: 101;
+   position: fixed;
+   right: 30px;
+   top: 30px;
+
+   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
 }
 // =========================================
 
@@ -140,19 +146,20 @@ body {
    height: 100vh;
    position: relative;
 
-   &--info {
-   }
-
-
    &-center {
       &--horizontal {
          display: flex;
          justify-content: space-between;
          padding-left: 40px;
          margin: 0 60px;
-         
-         .content__img {
 
+         .content__img {
+            @media (max-height: 750px) {
+               width: 500px;
+            }
+            @media (max-height: 650px) {
+               width: 400px;
+            }
          }
       }
 
@@ -171,6 +178,9 @@ body {
             }
             @media (max-height: 750px) {
                width: 350px;
+            }
+            @media (max-height: 650px) {
+               width: 300px;
             }
          }
       }
@@ -196,10 +206,20 @@ body {
       span {
          font-weight: 400;
       }
+
+      @media (max-height: 650px) {
+         left: -75px;
+         font-size: 20px;
+      }
    }
 
    &__name {
       line-height: 80px;
+
+      @media (max-height: 650px) {
+         font-size: 70px;
+         line-height: 60px;
+      }
    }
 }
 

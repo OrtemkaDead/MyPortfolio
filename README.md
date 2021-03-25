@@ -1,2 +1,1 @@
-<!-- # MyPortfolio -->
-permalink: ./index.html
+# MyPortfolio
