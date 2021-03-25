@@ -1,2 +1,2 @@
-# MyPortfolio
-fdf
+<!-- # MyPortfolio -->
+permalink: ./index.html
