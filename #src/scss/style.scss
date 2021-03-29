@@ -99,12 +99,18 @@ body {
       fill: #EB5757;
       animation: heartbeat 1.5s ease-in-out infinite both;
    }
+
+   &--logo {
+      animation: heartbeat 1.5s ease-in-out infinite both;
+   }
 }
 
 .text {
    &-purple {
       color: $content-bg;
       position: relative;
+
+      animation: text-shadow-focus-white 0.8s both;
    }
 }
 
@@ -131,9 +137,16 @@ body {
    z-index: 101;
    position: fixed;
    right: 30px;
-   top: 30px;
+   bottom: 30px;
 
    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+}
+
+.logo {
+   z-index: 101;
+   position: fixed;
+   right: 30px;
+   bottom: 30px;
 }
 // =========================================
 
@@ -154,6 +167,8 @@ body {
          margin: 0 60px;
 
          .content__img {
+            animation: fade-in-right 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+
             @media (max-height: 750px) {
                width: 500px;
             }
@@ -202,6 +217,7 @@ body {
       color: $content-bg;
 
       transform: rotate(-90deg);
+      animation: tracking-in-expand 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 
       span {
          font-weight: 400;
@@ -215,6 +231,7 @@ body {
 
    &__name {
       line-height: 80px;
+      animation: text-shadow-focus-purple 0.8s both;
 
       @media (max-height: 650px) {
          font-size: 70px;
