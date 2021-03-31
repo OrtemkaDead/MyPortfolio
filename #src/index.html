@@ -13,8 +13,6 @@
 <body>
    @@include('_svg.html')
 
-
-
    <div class=" content content--welcome" id="welcome">
 
       <div class="content-center content-center--horizontal">
@@ -37,15 +35,17 @@
    </a>
 
    <nav class="nav">
-      <a class="nav__link nav__link--up" href="#welcome"></a>
-      <a class="nav__link nav__link--down" href="#info"></a>
+      <a class="nav__link nav__link--up" href="#welcome">
+         <svg class="icon">
+            <use xlink:href='#arrow-icon'></use>
+         </svg>
+      </a>
+      <a class="nav__link nav__link--down" href="#info">
+         <svg class="icon">
+            <use xlink:href='#arrow-icon'></use>
+         </svg>
+      </a>
    </nav>
-
-   <!-- <div class="logo">
-      <svg class="icon icon--logo">
-         <use xlink:href='#logo-icon'></use>
-      </svg>
-   </div> -->
 
    <div class="content content--info" id="info">
       <marquee class="marquee" behavior="scroll" scrollamount="13" scrolldelay="60" direction="left" height="150px">
@@ -77,7 +77,6 @@
 
       </div>
    </div>
-
 
    <script src="js/script.min.js"></script>
 </body>

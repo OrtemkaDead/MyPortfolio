@@ -19,3 +19,13 @@
    display: $display;
    position: $pos;
  }
+
+ @mixin long-shadow($hex : #FBFBFA, $size: 8) {
+    $ts: ();
+
+    @for $i from 1 through $size {
+       $ts: $ts, ($i * 1px) ($i * 1px) $hex;
+    }
+
+    text-shadow: $ts;
+ }

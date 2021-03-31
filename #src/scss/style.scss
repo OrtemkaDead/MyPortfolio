@@ -53,13 +53,33 @@ body {
    bottom: 0;
 
    &__link {
-      width: 25px; height: 25px;
-      background-color: $text-color;
-      border-radius: 100%;
+      width: 35px; height: 35px;
       margin-bottom: 10px;
+
+      .icon {
+         width: 35px; height: 35px;
+         stroke: $text-color;
+      }
+
+      &:hover {
+         .icon {
+            stroke: $content-bg;
+            transform: translateY(20px);
+         }
+      }
+
+      &:active {
+         .icon {
+            stroke: #00ffff;
+            transform: translateY(30px);
+         }
+      }
+
+      &:first-child {
+         transform: rotate(180deg);
+      }
    }
 }
-
 
 .icon {
    display: flex;
@@ -93,14 +113,15 @@ body {
       &:hover {
          cursor: pointer;
       }
+
+      &:active {
+         fill: #00ffff;
+         transform: translateY(-5px);
+      }
    }
 
    &--heartbeat {
       fill: #EB5757;
-      animation: heartbeat 1.5s ease-in-out infinite both;
-   }
-
-   &--logo {
       animation: heartbeat 1.5s ease-in-out infinite both;
    }
 }
@@ -179,11 +200,8 @@ body {
       }
 
       &--vertical {
-         display: flex;
+         @include flexing(space-between);
          flex-direction: column;
-         justify-content: space-between;
-         align-items: center;
-         
          height: 100vh;
          margin: 60px 0;
 
@@ -232,6 +250,10 @@ body {
    &__name {
       line-height: 80px;
       animation: text-shadow-focus-purple 0.8s both;
+
+      &:hover {
+         cursor: pointer;
+      }
 
       @media (max-height: 650px) {
          font-size: 70px;

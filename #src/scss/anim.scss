@@ -37,6 +37,25 @@
   }
 }
 
+// @mixin shadow($hex: #6D55BD) {
+//    @keyframes text-shadow-focus {
+//       0% {
+//          filter: blur(5px);
+//          opacity: 0;
+//          text-shadow: 0 0 $hex, 0 0 $hex, 0 0 $hex, 0 0 $hex, 0 0 $hex, 0 0 $hex, 0 0 $hex, 0 0 $hex;
+//          transform: translateX(0) translateY(0);
+//       }
+//       100% {
+//          filter: blur(0px);
+//          opacity: 1;
+//          text-shadow: -1px 1px $hex, -2px 2px $hex, -3px 3px $hex, -4px 4px $hex, -5px 5px $hex, -6px 6px $hex, -7px 7px $hex, -8px 8px $hex;
+//          transform: translateX(8px) translateY(-8px);
+//       }
+//    }
+
+//    animation: text-shadow-focus 0.8s both;
+// }
+
 @keyframes text-shadow-focus-purple {
   0% {
     filter: blur(5px);
