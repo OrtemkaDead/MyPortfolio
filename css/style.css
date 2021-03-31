@@ -338,11 +338,35 @@ body {
 }
 
 .nav__link {
-  width: 25px;
-  height: 25px;
-  background-color: #FBFBFA;
-  border-radius: 100%;
+  width: 35px;
+  height: 35px;
   margin-bottom: 10px;
+}
+
+.nav__link .icon {
+  width: 35px;
+  height: 35px;
+  stroke: #FBFBFA;
+}
+
+.nav__link:hover .icon {
+  stroke: #6D55BD;
+  -webkit-transform: translateY(20px);
+      -ms-transform: translateY(20px);
+          transform: translateY(20px);
+}
+
+.nav__link:active .icon {
+  stroke: #00ffff;
+  -webkit-transform: translateY(30px);
+      -ms-transform: translateY(30px);
+          transform: translateY(30px);
+}
+
+.nav__link:first-child {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .icon {
@@ -377,13 +401,15 @@ body {
   cursor: pointer;
 }
 
-.icon--heartbeat {
-  fill: #EB5757;
-  -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
-          animation: heartbeat 1.5s ease-in-out infinite both;
+.icon--tools:active {
+  fill: #00ffff;
+  -webkit-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+          transform: translateY(-5px);
 }
 
-.icon--logo {
+.icon--heartbeat {
+  fill: #EB5757;
   -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
           animation: heartbeat 1.5s ease-in-out infinite both;
 }
@@ -465,16 +491,16 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   height: 100vh;
   margin: 60px 0;
 }
@@ -511,6 +537,10 @@ body {
   line-height: 80px;
   -webkit-animation: text-shadow-focus-purple 0.8s both;
           animation: text-shadow-focus-purple 0.8s both;
+}
+
+.info__name:hover {
+  cursor: pointer;
 }
 
 .tools {
