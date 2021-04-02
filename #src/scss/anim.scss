@@ -99,3 +99,13 @@
     opacity: 1;
   }
 }
+
+@keyframes transform-top {
+  0% {
+    transform: translateY(0);
+    
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
