@@ -47,9 +47,8 @@ body {
    transition: all .5s ease;
 
    &.light {
-      // color: $black-clr;
       color: $lite-black-clr;
-      background: #b8bbc2;
+      background: #a895da;
 
       .icon {
          fill: $lite-black-clr;
@@ -59,7 +58,7 @@ body {
          }
 
          &--heartbeat {
-            fill: $red-clr;
+            fill: #f47a60;
          }
 
          &--gmail {
@@ -79,12 +78,12 @@ body {
       }
 
       .text-purple {
-         color: #6d55bd;
+         color: #7860c4;
       }
 
       .nav__link {
          .icon {
-            stroke: #3d3d3d;
+            stroke: $lite-black-clr;
          }
          &:hover {
             .icon {
@@ -99,7 +98,7 @@ body {
       }
 
       .info__text {
-         color: $black-clr;
+         color: $lite-black-clr;
       }
 
       .theme-button {
@@ -374,12 +373,6 @@ body {
    bottom: 30px;
 
    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
-
-   // &:hover {
-   //    .icon--gmail {
-   //       transform: translateY(-10px);
-   //    }
-   // }
 }
 
 .theme-button {
