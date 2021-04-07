@@ -21,10 +21,13 @@ $main-p: 24px;
 // 750 px
 
 $black-clr: #262626;
+$lite-black-clr: #3d3d3d;
 $white-clr: #FBFBFA;
 $purple-clr: #6D55BD;
 $blue-clr: #00ffff;
 $red-clr: #EB5757;
+
+$transition-time: .25s;
 
 $ff: 'OpenSans';
 $fw: 700;
@@ -41,6 +44,70 @@ body {
    color: $white-clr;
    
    background: $black-clr;
+   transition: all .5s ease;
+
+   &.light {
+      // color: $black-clr;
+      color: $lite-black-clr;
+      background: #b8bbc2;
+
+      .icon {
+         fill: $lite-black-clr;
+
+         &--tools {
+            filter: drop-shadow(2px 2px 2px $black-clr);
+         }
+
+         &--heartbeat {
+            fill: $red-clr;
+         }
+
+         &--scale {
+            &:active {
+               fill: $blue-clr;
+            }
+         }
+      }
+
+      .text-purple {
+         color: #6d55bd;
+      }
+
+      .nav__link {
+         .icon {
+            // stroke: $black-clr;
+            stroke: #3d3d3d;
+         }
+         &:hover {
+            .icon {
+               stroke: $purple-clr;
+            }
+         }
+         &:active {
+            .icon {
+               stroke: $blue-clr;
+            }
+         }
+      }
+
+      .info__text {
+         color: $black-clr;
+      }
+
+      .theme-button {
+         border: 2px solid $lite-black-clr;
+
+         &:hover {
+            color: $purple-clr;
+            border-color: $purple-clr;
+         }
+      
+         &:active {
+            color: $blue-clr;
+            border-color: $blue-clr;
+         }
+      }
+   }
 }
 
 .icon {
@@ -50,7 +117,7 @@ body {
    width: 50px; height: 50px;
 
    fill: $purple-clr;
-   transition: all ease .2s;
+   transition: all ease $transition-time;
 
    &--tools {
       width: 125px; height: 125px;
@@ -98,7 +165,7 @@ body {
       position: relative;
 
       animation: text-shadow-focus-white 0.8s both;
-      transition: color .2s ease;
+      transition: color $transition-time ease;
    }
 }
 
@@ -226,7 +293,7 @@ body {
       line-height: 80px;
       animation: text-shadow-focus-purple 0.8s both;
 
-      transition: color .2s ease;
+      transition: color $transition-time ease;
 
       &:hover {
          cursor: pointer;
@@ -234,7 +301,7 @@ body {
          color: #d8b4db;
 
          .text-purple {
-            color: #4b4b4b;
+            color: $lite-black-clr;
          }
       }
 
@@ -281,7 +348,32 @@ body {
    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
 }
 
-// @media (prefers-dark-interface) {
-//    $main-bg: #FBFBFA;
-//    $text-color: #262626;
-// }
+.theme-button {
+   z-index: 101;
+   position: fixed;
+   right: 30px;
+   top: 30px;
+   width: 50px; height: 50px;
+
+   cursor: pointer;
+   font-size: 26px;
+
+   background-color: transparent;
+   border: 2px solid $white-clr;
+   border-radius: 20px;
+   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, .8));
+
+   transition: all $transition-time ease;
+
+   &:hover {
+      transform: scale(1.1);
+      color: $purple-clr;
+      border-color: $purple-clr;
+   }
+
+   &:active {
+      transform: scale(1);
+      color: $blue-clr;
+      border-color: $blue-clr;
+   }
+}
